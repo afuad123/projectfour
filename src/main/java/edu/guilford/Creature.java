@@ -12,13 +12,13 @@ public abstract class Creature {
 
     //ATTRIBUTES
     /**A positive floating-point number that is the current size of the object (in grams)*/
-    private float size;
+    protected float size;
     /**A floating-point number that is the current rate of growth of the object (in grams/day)*/
-    private float rate;
+    protected float rate;
     /** A boolean with true meaning alive and false meaning dead; is initialized to true when the object is instantiated*/
-    private boolean alive;
+    protected boolean alive;
     /**An integer that is the number of days the object has been alive; it is alway initialized to zero*/
-    private int age;
+    protected int age;
 
     //GETTERS AND SETTERS
     /**A getter for size
