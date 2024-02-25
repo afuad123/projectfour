@@ -3,9 +3,14 @@ package edu.guilford;
 public abstract class Critter extends Creature {
 
     //ATTRIBUTES
-    //foodNeed: a positive floating-point number that is the amount of food the object needs each day
+    /**
+     * A positive floating-point number that is the amount of food the object needs each day (in grams)
+     */
     private float foodNeed;
-    //foodEaten: a positive floating-point number that is the amount of food eaten so far in the day. It is set to zero when the object is initialized and at the beginning of each new day
+    /**
+     * A positive floating-point number that is the amount of food eaten so far in the day 
+     * It is set to zero when the object is initialized and at the beginning of each new day
+     */
     private float foodEaten;
 
     //GETTERS AND SETTERS
@@ -16,13 +21,21 @@ public abstract class Critter extends Creature {
     public float getFoodNeed() {
         return foodNeed;
     }
-    //setter for foodNeed
+    /**
+     * A setter for foodNeed
+     * @param foodEaten the new value of foodNeed (in g)
+     */
     public void setFoodNeed(float foodNeed) {
         this.foodNeed = foodNeed;
     }
 
     //CONSTRUCTOR
-    //constructor sets the values of size, rate, and foodNeed.
+    /**
+     * A constructor that initializes a default of the Critter object with a size, growth rate, and amount of food needed; foodEaten will be set to zero
+     * @param size the initial size of the object (in g)
+     * @param rate  the initial rate of growth of the object (in g/day)
+     * @param foodNeed the amount of food the object needs each day (in g)
+     */
     public Critter(float size, float rate, float foodNeed) {
         super(size, rate);
         this.foodNeed = foodNeed;
@@ -30,7 +43,11 @@ public abstract class Critter extends Creature {
     }
 
     //METHODS
-    //The class should override the method simulateDay. It should call simulateDay from the superclass and then add a condition that the Critter dies if the amount of food needed is less than the amount eaten in that day. If that condition is not true (the Critter is still alive), then the amount of food eaten should be set equal to zero.
+    /**
+     * A method that simulates a day in the life of the Critter;
+     * The Critter dies if the amount of foodNeed is less than the amount of foodEaten; 
+     * If the Critter is still alive, then the amount of foodEaten should be set to zero for the next simulated day
+     */
     @Override
     public void simulateDay() {
         super.simulateDay();
@@ -40,13 +57,18 @@ public abstract class Critter extends Creature {
             foodEaten = 0;
         }
     }
-
-    //eat: a method that adds an amount to the value of foodEaten
+    /**
+     * A method that adds an amount (in g) to the value of foodEaten
+     * @param amount the amount of new food eaten (in g)
+     */
     public void eat(float amount) {
         foodEaten += amount;
     }
 
-    //stillNeed: a method with no parameters that returns the amount of food still needed (foodNeed - foodEaten)
+    /**
+     * Returns the amount of food still needed (foodNeed - foodEaten)
+     * @return the amount of food still needed (in g)
+     */
     public float stillNeed() {
         return foodNeed - foodEaten;
     }
