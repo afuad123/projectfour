@@ -27,20 +27,14 @@ public class PlantEater extends Critter {
 
     //METHODS
     /**
-     * The PlantEater object eats (chews) part of a specified Plant object. The amount it chews is random, but cannot exceed half of the size of the Plant,
-     * the amount of stillNeed(), or 10% of foodNeed
+     * The PlantEater object eats (chews) part of a specified Plant object. The amount it chews is random, but cannot exceed half of the size of the Plant
      * @param plant the Plant object to be chewed on
      */
     public void chew(Plant plant) {
-        float amount = rand.nextFloat() * plant.getSize() / 2;
-        if (amount > stillNeed()) {
-            amount = stillNeed();
-        }
-        if (amount > getFoodNeed() * 0.1) {
-            amount = getFoodNeed() / 10;
-        }
+        float amount = rand.nextFloat(plant.getSize()) / 2;
         plant.chewedOn(amount);
         eat(amount);
+        size += amount;
     }
 
     /**
@@ -56,7 +50,7 @@ public class PlantEater extends Critter {
         }
         super.simulateDay();
     }
-    
+
     /**
      * A method that returns a string representation of the object
      * @return a string representation of the object containing size (g), growth rate (g/day), amount of food needed (g), and the number of plants available to the object
@@ -64,6 +58,14 @@ public class PlantEater extends Critter {
     @Override
     public String toString() {
         return "PlantEater: size = " + getSize() + "g, rate = " + getRate() + "g/day, foodNeed = " + getFoodNeed() + "g/day, plants = " + plants.length;
+    }
+
+    /**
+     * A method that returns the amount of food eaten by the PlantEater object
+     * @return the amount of food eaten by the PlantEater object (in g)
+     */
+    public float getFoodEaten() {
+        return foodEaten;
     }
 
 }

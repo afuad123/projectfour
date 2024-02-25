@@ -11,7 +11,7 @@ public abstract class Critter extends Creature {
      * A positive floating-point number that is the amount of food eaten so far in the day 
      * It is set to zero when the object is initialized and at the beginning of each new day
      */
-    private float foodEaten;
+    protected float foodEaten;
 
     //GETTERS AND SETTERS
     /**
@@ -70,7 +70,13 @@ public abstract class Critter extends Creature {
      * @return the amount of food still needed (in g)
      */
     public float stillNeed() {
-        return foodNeed - foodEaten;
+        if (foodNeed - foodEaten > 0) {
+            return foodNeed - foodEaten;
+        }
+        else {
+            return 0;
+        }
+        
     }
 
 }

@@ -1,0 +1,23 @@
+TEST 1: Day in the life of a plant eater, without simulateDay(): 
+Is the plantEater object alive? true
+The plantEater object's size is 1000.0g
+The plantEater object's growth rate is 3.0g/day
+The plantEater object's food need is 50.0g/day
+The plantEater object's age is 0 days
+The plantEater object still needs 50.0g of food to survive
+The plantEater object is now eating a plant
+The total size of the plant object that was chewed on is 237.01543g
+The plantEater object ate 102.98457g of the plant
+The plantEater object's size is now 1102.9846g
+The plantEater object still needs 0.0g of food
+
+TEST 1: Day in the life of a plant eater, with simulateDay(): 
+Is the plantEater object alive? true
+The plantEater object's size is 1000.0g
+The plantEater object's growth rate is 3.0g/day
+The plantEater object's food need is 50.0g/day
+The plantEater object's age is 0 days
+The plantEater object still needs 50.0g of food to survive
+The plantEater object is now simulating a day
+The plantEater object's size is now 8497.948g
+The plantEater object's age is now 1 days
