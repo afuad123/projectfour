@@ -1,5 +1,11 @@
 package edu.guilford;
-
+/**
+ * A class that represents a critter object in the simulation
+ @author A. Fuad
+ @version 2/19/24
+ @see Creature
+ @see PlantEater
+ */
 public abstract class Critter extends Creature {
 
     //ATTRIBUTES

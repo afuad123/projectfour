@@ -1,5 +1,11 @@
 package edu.guilford;
-
+/**
+ * A class that represents a plant in the simulation
+ @author A. Fuad
+ @version 2/19/24
+ @see Creature
+ @see PlantEater
+ */
 public class Plant extends Creature {
 
     //CONSTRUCTOR

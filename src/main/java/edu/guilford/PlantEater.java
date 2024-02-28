@@ -2,6 +2,13 @@ package edu.guilford;
 
 import java.util.Random;
 
+/**
+ * A class that represents a plant eater (herbivore) in the simulation
+ @author A. Fuad
+ @version 2/19/24
+ @see Critter
+ @see Plant
+ */
 public class PlantEater extends Critter {
 
     //ATTRIBUTES

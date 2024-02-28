@@ -1,0 +1,22 @@
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'/Users/adrita/Documents/CTIS310/projectfour/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/adrita/Documents/CTIS310/projectfour/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'projectfour 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'projectfour 1.0-SNAPSHOT API'

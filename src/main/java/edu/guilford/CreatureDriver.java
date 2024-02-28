@@ -16,8 +16,8 @@ public class CreatureDriver {
         }
 
         //Instantiate one PlantEater object with a size of 1000±100 grams, a growth rate of 3 grams/day and a food need of 50 grams/day.
-        PlantEater plantEater1 = new PlantEater(1000, 3, 50, plants.toArray(new Plant[plants.size()]));
-        PlantEater plantEater2 = new PlantEater(1000, 3, 50, plants.toArray(new Plant[plants.size()]));
+        //PlantEater plantEater1 = new PlantEater(1000, 3, 50, plants.toArray(new Plant[plants.size()]));
+        //PlantEater plantEater2 = new PlantEater(1000, 3, 50, plants.toArray(new Plant[plants.size()]));
 
         //Test methods from the plantEater class
         //Tests using plantEater1 show that the methods from the class work as expected
