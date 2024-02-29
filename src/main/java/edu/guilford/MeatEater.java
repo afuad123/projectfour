@@ -1,21 +1,39 @@
 package edu.guilford;
 
 import java.util.Random;
-
+/**
+ * A class that represents a meat eater object in the simulation
+ * @Author A. Fuad
+ * @Version 2/29/24
+ * @See Critter
+ * @See PlantEater
+ */
 public class MeatEater extends Critter {
 
     //ATTRIBUTES
-    //The class should have an attribute that is a list of available PlantEater objects it can chase and eat.
+    /**
+     * An array of PlantEater objects that the meat eater object can chase and eat
+     */
     private PlantEater[] plantEaters;
     private Random rand = new Random();
 
     //CONSTRUCTOR
+    /**
+     * A constructor that initializes a meat eater object with a size, growth rate, and amount of food needed; foodEaten will be set to zero
+     * @param size the initial size of the object (in g)
+     * @param rate  the initial rate of growth of the object (in g/day)
+     * @param foodNeed the amount of food the object needs each day (in g)
+     */
     public MeatEater(float size, float rate, float foodNeed) {
         super(size, rate, foodNeed);
         
     }
 
     //METHODS
+    /**
+     * A method that simulates a day in the life of the meat eater; along with adding onto the simulateDay method in the Critter class,
+     * the meat eater object can chase and eat one or two plant eater objects a day, causing the plant eater to die.
+     */
     @Override
     public void simulateDay() {
         //a meat eater object can chase one or two plant eater objects a day

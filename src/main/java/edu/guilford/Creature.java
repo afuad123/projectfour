@@ -50,8 +50,8 @@ public abstract class Creature {
         return age;
     }
     /**
-     * A setter for size
-     * @param size the new value of size (in g)
+     * A setter for rate
+     * @param rate the new value of size (in g)
      */
     public void setRate(float rate) {
         this.rate = rate;

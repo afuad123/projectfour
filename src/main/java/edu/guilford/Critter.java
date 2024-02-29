@@ -29,7 +29,7 @@ public abstract class Critter extends Creature {
     }
     /**
      * A setter for foodNeed
-     * @param foodEaten the new value of foodNeed (in g)
+     * @param foodNeed the new value of foodNeed (in g)
      */
     public void setFoodNeed(float foodNeed) {
         this.foodNeed = foodNeed;

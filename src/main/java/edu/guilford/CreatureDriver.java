@@ -3,6 +3,16 @@ package edu.guilford;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * A driver program for the Creature class and its subclasses
+ * @Author A. Fuad
+ * @Version 2/29/24
+ * @See Plant
+ * @See PlantEater
+ * @See MeatEater
+ 
+ */
+
 public class CreatureDriver {
     public static void main(String[] args) {
         Random rand = new Random();
@@ -91,15 +101,15 @@ public class CreatureDriver {
 
         //TEST THE UPDATED FOODNEED ATTRIBUTE FOR THE PLANTEATER CLASS
         //Instantiate a list that contains 100 Plant objects, each with a size of 300±50 grams and a growth rate of 5 grams/day.
-        ArrayList<PlantEater> plantEater = new ArrayList<PlantEater>();
+        ArrayList<PlantEater> plantEaters = new ArrayList<PlantEater>();
         for (int i = 0; i < 100; i++) {
             int randsize = rand.nextInt(100) + 250;
-            plantEater.add(new PlantEater(randsize, 5, 50, plants.toArray(new Plant[plants.size()]) ));
+            plantEaters.add(new PlantEater(randsize, 5, 50, plants.toArray(new Plant[plants.size()]) ));
         }
         //select 3 random objects from the list and print out their size and foodneed
         for (int i = 0; i < 3; i++) {
-            System.out.println("The size of the plantEater object is " + plantEater.get(i).getSize() + "g");
-            System.out.println("The food need of the plantEater object is " + plantEater.get(i).getFoodNeed() + "g/day");
+            System.out.println("The size of the plantEater object is " + plantEaters.get(i).getSize() + "g");
+            System.out.println("The food need of the plantEater object is " + plantEaters.get(i).getFoodNeed() + "g/day");
             //the foodNeed should be 15% of the value of the size
         }
 
@@ -111,17 +121,18 @@ public class CreatureDriver {
             int randsize = rand.nextInt(100) + 250;
             meatEater.add(new MeatEater(randsize, 5, 50));
         }
-        //invoke simulateDay on meatEaters
-        for (int i = 0; i < meatEater.size(); i++) {
-            meatEater.get(i).simulateDay();
-        }
-        //select 3 random meatEater objects from the list and print out their attributes 
-        for (int i = 0; i < 3; i++) {
-            System.out.println("The size of the meatEater object is " + meatEater.get(i).getSize() + "g");
-            System.out.println("The growth rate of the meatEater object is " + meatEater.get(i).getRate() + "g/day");
-            System.out.println("The food need of the meatEater object is " + meatEater.get(i).getFoodNeed() + "g/day");
-        }
+       
+       
+        //test the simulateDay method on two meat eater objects
+        meatEater.get(5).simulateDay();
+        System.out.println("The size of the 7th meatEater object is " + meatEater.get(7).getSize() + "g");
+        System.out.println("The growth rate of the 7th meatEater object is " + meatEater.get(7).getRate() + "g/day");
+        System.out.println("The food need of the 7th meatEater object is " + meatEater.get(7).getFoodNeed() + "g/day");
         
+        meatEater.get(27).simulateDay();
+        System.out.println("The size of the 27th meatEater object is " + meatEater.get(27).getSize() + "g");
+        System.out.println("The growth rate of the 27th meatEater object is " + meatEater.get(27).getRate() + "g/day");
+        System.out.println("The food need of the 27th meatEater object is " + meatEater.get(27).getFoodNeed() + "g/day");
         
        
 
