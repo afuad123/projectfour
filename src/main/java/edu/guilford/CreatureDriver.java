@@ -49,6 +49,51 @@ public class CreatureDriver {
         // System.out.println("The plantEater object's age is now " + plantEater2.getAge() + " days");
 
         //TEST 2
+        //instantiate a list of 300 PlantEater objects. 
+        ArrayList<PlantEater> plantEaters = new ArrayList<PlantEater>();
+        //Add a loop that runs as long as one PlantEaterobject is alive and that also gives birth to some new Plant and PlantEater objects. 
+        for (int i = 0; i < 300; i++) {
+            //invoke simulateDay method for each Creature object in the simulation
+            int j = 0;
+            while (j < plants.size()) {
+                plants.get(j).simulateDay();
+                j++;
+            }
+            int k = 0;
+            while (k < plantEaters.size()) {
+                plantEaters.get(k).simulateDay();
+                k++;
+            }
+            //There is a 5% chance each day that a new Plant will be born, and a 50% chance each day that a new PlantEaterobject will be born.
+            if (rand.nextInt(100) < 5) {
+                int randsize = rand.nextInt(100) + 250;
+                plants.add(new Plant(randsize, 5));
+            }
+            if (rand.nextInt(100) < 50) {
+                int randsize = rand.nextInt(200) + 800;
+                plantEaters.add(new PlantEater(randsize, 3, 50, plants.toArray(new Plant[plants.size()])));
+            }
+            //remove dead objects from list
+            while (i < plantEaters.size()) {   //while we are within the plantEaters list
+                if (!plantEaters.get(i).isAlive()) {  //if the plantEater at index i is not alive (isAlive = false)
+                    plantEaters.remove(i);  //remove the plantEater at index i from the list
+                } else {  //if it is alive, move on to the next object
+                    i++;  
+                }
+            }  
+        }
+        //Print out the total number and mass of the PlantEater and Plant objects.
+        System.out.println("The total number of PlantEater objects is " + plantEaters.size());
+        System.out.printf("The total mass of the PlantEater objects is %.2f g\n", totalMass(plantEaters));
+        //print out the mass and number of the plants
+        System.out.println("The total number of Plant objects is " + plants.size());
+        System.out.printf("The total mass of the Plant objects is %.2f g\n", totalMass(plants));
+        
+       
+
+
+
+
         
 
     
