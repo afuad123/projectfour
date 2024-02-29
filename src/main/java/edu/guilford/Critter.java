@@ -44,8 +44,7 @@ public abstract class Critter extends Creature {
      */
     public Critter(float size, float rate, float foodNeed) {
         super(size, rate);
-        this.foodNeed = foodNeed;
-        foodEaten = 0;
+        this.foodNeed = foodEaten = (15*size)/100; //needs to eat 15% of its size to survive
     }
 
     //METHODS
